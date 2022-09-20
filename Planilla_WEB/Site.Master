@@ -1,0 +1,112 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="Planilla_WEB.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <html lang="es">
+<html>
+<head runat="server">
+    <link href="/CSS/Estilos.css" rel="Stylesheet" type="text/css" />
+    <title>Inicio</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a, .dropbtn {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover, .dropdown:hover .dropbtn {
+          background-color: lightslategrey;
+        }
+
+        li.dropdown {
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        .dropdown-content a {
+          color: darkslategrey;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+</style>
+</head>
+
+
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+               
+            </Scripts>
+        </asp:ScriptManager>
+
+        <ul>
+          <li><a href="/Default">Inicio</a></li>
+          <li><a href="/WebPages/frmRegistroEmpleados">Registro Empleados</a></li>
+          <li><a href="/WebPages/frmPagoPlanilla">Pago planilla</a></li>
+                      <li><a href="/WebPages/frmConsultaPlanillas">Consulta Planillas</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Mantenimiento</a>
+            <div class="dropdown-content">
+              <a href="/WebPages/frmMantenimientoCargasSociales">Cargas Sociales</a>
+              <a href="/WebPages/frmMantenimientoCreditosFiscales">Creditos Fiscales</a>
+              <a href="/WebPages/frmMantenimientoEmpleados">Empleados</a>
+              <a href="/WebPages/frmMantenimientoImpuestoRenta">Impuesto de renta</a>
+                 <a href="/WebPages/frmMantemientoUsuarios">Mantenimiento Usuarios</a>
+            </div>
+              <li><a href="/About">Acerca de</a></li>
+          </li>
+        </ul>
+       
+
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Desarrollado por Luis Ardon & Victor Salgado</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+
+</html>
